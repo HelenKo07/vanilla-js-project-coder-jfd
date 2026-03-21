@@ -1,0 +1,21 @@
+// Variables that do not change
+$color-blue: #007bff;
+$transition-speed: 0.3s;
+
+// Theme variables
+:root {
+  --bg-main: #ffffff;
+  --text-color: #222222;
+  --header-bg: #1a1a1b;
+  --card-bg: #ffffff;
+  --border-color: #e0e0e0;
+}
+
+// Colors for dark theme
+body.dark-theme {
+  --bg-main: #121212;
+  --text-color: #f4f4f4;
+  --header-bg: #000000;
+  --card-bg: #1e1e1e;
+  --border-color: #333333;
+}

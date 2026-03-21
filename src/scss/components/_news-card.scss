@@ -1,0 +1,9 @@
+.news-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  transition: background-color $transition-speed, color $transition-speed;
+
+  &__title {
+    color: var(--text-color);
+  }
+}

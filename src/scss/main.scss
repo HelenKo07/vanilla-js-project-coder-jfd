@@ -1,0 +1,11 @@
+// src/scss/main.scss
+@import "variables";
+@import "base/reset";
+@import "base/typography";
+@import "layout/grid";
+
+// Компоненты
+@import "components/header";
+@import "components/news-card";
+@import "components/dropdown";
+@import "components/burger";
