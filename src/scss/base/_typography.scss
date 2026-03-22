@@ -1,0 +1,33 @@
+body {
+  min-width: 360px;
+  background:
+    radial-gradient(circle at top right, rgba(75, 153, 245, 0.09), transparent 24%),
+    linear-gradient(180deg, #f7f7f8 0%, var(--bg-main) 140px);
+  color: var(--text-color);
+  font-family: "Roboto", sans-serif ;
+  line-height: 1.25;
+  transition:
+    background-color $transition-speed,
+    color $transition-speed;
+}
+
+body.dark-theme {
+  background:
+    radial-gradient(circle at top right, rgba(75, 153, 245, 0.12), transparent 22%),
+    linear-gradient(180deg, #101317 0%, var(--bg-main) 160px);
+}
+
+.page-shell {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(100% - 48px, $container-width);
+  margin: 0 auto;
+}
+
+@media (max-width: 1023px) {
+  .container {
+    width: min(100% - 24px, $container-width);
+  }
+}
