@@ -186,6 +186,27 @@ export const renderApp = () => `
             <svg><use href="${spriteUrl}#icon-info"></use></svg>
             <span data-i18n="tag5"></span>
           </button>
+
+          <div class="weather-chip" aria-label="Weather summary">
+            <span class="weather-chip__city" data-i18n="weatherCityChip"></span>
+            <span class="weather-chip__divider" aria-hidden="true"></span>
+            <span class="weather-chip__status" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="4.5" fill="#ffd33d" />
+                <g stroke="#ffd33d" stroke-linecap="round" stroke-width="2">
+                  <path d="M12 1.5v3" />
+                  <path d="M12 19.5v3" />
+                  <path d="M1.5 12h3" />
+                  <path d="M19.5 12h3" />
+                  <path d="m4.6 4.6 2.1 2.1" />
+                  <path d="m17.3 17.3 2.1 2.1" />
+                  <path d="m17.3 6.7 2.1-2.1" />
+                  <path d="m4.6 19.4 2.1-2.1" />
+                </g>
+              </svg>
+              <span class="weather-chip__temp">+14°</span>
+            </span>
+          </div>
         </section>
 
         <section class="news-layout">
@@ -295,6 +316,220 @@ export const renderApp = () => `
             <svg><use href="${spriteUrl}#icon-arrow"></use></svg>
           </button>
         </div>
+
+        <section class="weather-card weather-card--desktop" aria-label="Weather forecast">
+          <div class="weather-card__head">
+            <h2 class="weather-card__title" data-i18n="weatherTitle"></h2>
+            <svg class="weather-card__pin" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 21s7-6.12 7-11a7 7 0 1 0-14 0c0 4.88 7 11 7 11z"
+              />
+              <circle cx="12" cy="10" r="2.7" fill="none" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </div>
+
+          <div class="weather-card__body">
+            <div class="weather-card__summary">
+              <p class="weather-card__temp">+14°</p>
+              <div class="weather-card__status" aria-hidden="true">
+                <svg class="weather-card__cloud" viewBox="0 0 54 40">
+                  <path
+                    fill="#9ec7ff"
+                    d="M17 32c-6.6 0-12-4.9-12-11 0-5.7 4.7-10.4 10.8-11 1.7-5.5 6.9-9.5 13.2-9.5 7.7 0 14 5.9 14.7 13.4 5.1.9 9.1 5.2 9.1 10.4 0 5.9-5 10.7-11.1 10.7z"
+                  />
+                </svg>
+                <svg class="weather-card__rain" viewBox="0 0 16 20">
+                  <path fill="#58a8ff" d="M8 0c3.1 4.6 5.8 8.2 5.8 12A5.8 5.8 0 1 1 2.2 12C2.2 8.2 4.9 4.6 8 0z" />
+                </svg>
+                <svg class="weather-card__bolt" viewBox="0 0 20 28">
+                  <path fill="#ffd33d" d="M12.5 0 2 15h6l-1.3 13L18 11h-6.2z" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="weather-card__periods">
+              <div class="weather-card__period">
+                <span class="weather-card__label" data-i18n="weatherMorning"></span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4.5" fill="#ffd33d" />
+                  <g stroke="#ffd33d" stroke-linecap="round" stroke-width="2">
+                    <path d="M12 1.5v3" />
+                    <path d="M12 19.5v3" />
+                    <path d="M1.5 12h3" />
+                    <path d="M19.5 12h3" />
+                    <path d="m4.6 4.6 2.1 2.1" />
+                    <path d="m17.3 17.3 2.1 2.1" />
+                    <path d="m17.3 6.7 2.1-2.1" />
+                    <path d="m4.6 19.4 2.1-2.1" />
+                  </g>
+                </svg>
+              </div>
+
+              <div class="weather-card__period">
+                <span class="weather-card__label" data-i18n="weatherDay"></span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4.5" fill="#ffd33d" />
+                  <g stroke="#ffd33d" stroke-linecap="round" stroke-width="2">
+                    <path d="M12 1.5v3" />
+                    <path d="M12 19.5v3" />
+                    <path d="M1.5 12h3" />
+                    <path d="M19.5 12h3" />
+                    <path d="m4.6 4.6 2.1 2.1" />
+                    <path d="m17.3 17.3 2.1 2.1" />
+                    <path d="m17.3 6.7 2.1-2.1" />
+                    <path d="m4.6 19.4 2.1-2.1" />
+                  </g>
+                </svg>
+              </div>
+
+              <div class="weather-card__period">
+                <span class="weather-card__label" data-i18n="weatherEvening"></span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4.5" fill="#ffd33d" />
+                  <g stroke="#ffd33d" stroke-linecap="round" stroke-width="2">
+                    <path d="M12 1.5v3" />
+                    <path d="M12 19.5v3" />
+                    <path d="M1.5 12h3" />
+                    <path d="M19.5 12h3" />
+                    <path d="m4.6 4.6 2.1 2.1" />
+                    <path d="m17.3 17.3 2.1 2.1" />
+                    <path d="m17.3 6.7 2.1-2.1" />
+                    <path d="m4.6 19.4 2.1-2.1" />
+                  </g>
+                </svg>
+              </div>
+
+              <div class="weather-card__period">
+                <span class="weather-card__label" data-i18n="weatherNight"></span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4.5" fill="#ffd33d" />
+                  <g stroke="#ffd33d" stroke-linecap="round" stroke-width="2">
+                    <path d="M12 1.5v3" />
+                    <path d="M12 19.5v3" />
+                    <path d="M1.5 12h3" />
+                    <path d="M19.5 12h3" />
+                    <path d="m4.6 4.6 2.1 2.1" />
+                    <path d="m17.3 17.3 2.1 2.1" />
+                    <path d="m17.3 6.7 2.1-2.1" />
+                    <path d="m4.6 19.4 2.1-2.1" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="weather-card" aria-label="Weather forecast">
+          <div class="weather-card__head">
+            <h2 class="weather-card__title" data-i18n="weatherTitle"></h2>
+            <svg class="weather-card__pin" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 21s7-6.12 7-11a7 7 0 1 0-14 0c0 4.88 7 11 7 11z"
+              />
+              <circle cx="12" cy="10" r="2.7" fill="none" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </div>
+
+          <div class="weather-card__body">
+            <div class="weather-card__summary">
+              <p class="weather-card__temp">+14°</p>
+              <div class="weather-card__status" aria-hidden="true">
+                <svg class="weather-card__cloud" viewBox="0 0 54 40">
+                  <path
+                    fill="#9ec7ff"
+                    d="M17 32c-6.6 0-12-4.9-12-11 0-5.7 4.7-10.4 10.8-11 1.7-5.5 6.9-9.5 13.2-9.5 7.7 0 14 5.9 14.7 13.4 5.1.9 9.1 5.2 9.1 10.4 0 5.9-5 10.7-11.1 10.7z"
+                  />
+                </svg>
+                <svg class="weather-card__rain" viewBox="0 0 16 20">
+                  <path fill="#58a8ff" d="M8 0c3.1 4.6 5.8 8.2 5.8 12A5.8 5.8 0 1 1 2.2 12C2.2 8.2 4.9 4.6 8 0z" />
+                </svg>
+                <svg class="weather-card__bolt" viewBox="0 0 20 28">
+                  <path fill="#ffd33d" d="M12.5 0 2 15h6l-1.3 13L18 11h-6.2z" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="weather-card__periods">
+              <div class="weather-card__period">
+                <span class="weather-card__label" data-i18n="weatherMorning"></span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4.5" fill="#ffd33d" />
+                  <g stroke="#ffd33d" stroke-linecap="round" stroke-width="2">
+                    <path d="M12 1.5v3" />
+                    <path d="M12 19.5v3" />
+                    <path d="M1.5 12h3" />
+                    <path d="M19.5 12h3" />
+                    <path d="m4.6 4.6 2.1 2.1" />
+                    <path d="m17.3 17.3 2.1 2.1" />
+                    <path d="m17.3 6.7 2.1-2.1" />
+                    <path d="m4.6 19.4 2.1-2.1" />
+                  </g>
+                </svg>
+              </div>
+
+              <div class="weather-card__period">
+                <span class="weather-card__label" data-i18n="weatherDay"></span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4.5" fill="#ffd33d" />
+                  <g stroke="#ffd33d" stroke-linecap="round" stroke-width="2">
+                    <path d="M12 1.5v3" />
+                    <path d="M12 19.5v3" />
+                    <path d="M1.5 12h3" />
+                    <path d="M19.5 12h3" />
+                    <path d="m4.6 4.6 2.1 2.1" />
+                    <path d="m17.3 17.3 2.1 2.1" />
+                    <path d="m17.3 6.7 2.1-2.1" />
+                    <path d="m4.6 19.4 2.1-2.1" />
+                  </g>
+                </svg>
+              </div>
+
+              <div class="weather-card__period">
+                <span class="weather-card__label" data-i18n="weatherEvening"></span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4.5" fill="#ffd33d" />
+                  <g stroke="#ffd33d" stroke-linecap="round" stroke-width="2">
+                    <path d="M12 1.5v3" />
+                    <path d="M12 19.5v3" />
+                    <path d="M1.5 12h3" />
+                    <path d="M19.5 12h3" />
+                    <path d="m4.6 4.6 2.1 2.1" />
+                    <path d="m17.3 17.3 2.1 2.1" />
+                    <path d="m17.3 6.7 2.1-2.1" />
+                    <path d="m4.6 19.4 2.1-2.1" />
+                  </g>
+                </svg>
+              </div>
+
+              <div class="weather-card__period">
+                <span class="weather-card__label" data-i18n="weatherNight"></span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4.5" fill="#ffd33d" />
+                  <g stroke="#ffd33d" stroke-linecap="round" stroke-width="2">
+                    <path d="M12 1.5v3" />
+                    <path d="M12 19.5v3" />
+                    <path d="M1.5 12h3" />
+                    <path d="M19.5 12h3" />
+                    <path d="m4.6 4.6 2.1 2.1" />
+                    <path d="m17.3 17.3 2.1 2.1" />
+                    <path d="m17.3 6.7 2.1-2.1" />
+                    <path d="m4.6 19.4 2.1-2.1" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   </div>

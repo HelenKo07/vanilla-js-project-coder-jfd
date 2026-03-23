@@ -30,6 +30,15 @@ The project replicates the Meta-style news interface and includes key user scena
 - [`src/modules/selectable-groups.ts`](/Users/alyona/Desktop/Собедование/vanilla-js-project-coder-jfd/src/modules/selectable-groups.ts) — group active states
 - [`src/scss/main.scss`](/Users/alyona/Desktop/Собедование/vanilla-js-project-coder-jfd/src/scss/main.scss) — entry point for all styles
 
+## Architecture
+
+- `templates` — render the base application layout
+- `modules` — isolate interactive logic by feature
+- `constants` — store translations and static content
+- `scss/base` — reset and global styles
+- `scss/layout` — grid and page-level structure
+- `scss/components` — reusable UI blocks and their states
+
 ## Launch
 
 ```bash
@@ -63,6 +72,9 @@ npm run preview
 - Implemented language switching
 - Added pagination / progressive loading for extra news
 - Added horizontal scrolling for additional news cards
+- Added desktop weather elements based on the mockup
+- Added a compact weather badge above the right-side news cards
+- Added a favicon
 - Added `hover` and `active` states for interactive UI elements
 - Added arrow rotation for the `More` button open/close state
 

@@ -325,11 +325,11 @@ body.dark-theme .sidebar-lang__btn.is-active {
   color: #77b3ff;
 }
 
-@media (max-width: $bp-xs) {
+@media (max-width: calc(#{$bp-md} - 1px)) {
   .sidebar__close {
     position: absolute;
-    top: 0%;
-    right: 6px;
+    top: 5%;
+    right: 9px;
     display: inline-flex;
     transform: translateY(-50%);
   }
