@@ -1,5 +1,5 @@
 import logoUrl from '../assets/icon/logo.svg?url';
-import logoBlackUrl from '../assets/icon/logo-black.svg?url'
+import logoBlackUrl from '../assets/icon/logo-black.svg?url';
 import spriteUrl from '../assets/icon/sprite.svg?url';
 
 export const renderApp = () => `
@@ -8,7 +8,10 @@ export const renderApp = () => `
 
     <aside class="sidebar" aria-label="Navigation">
       <div class="sidebar__top">
-        <img class="sidebar__logo" src="${logoBlackUrl}" alt="META" />
+        <div class="sidebar__logo-wrap" aria-label="META">
+          <img class="sidebar__logo sidebar__logo--light" src="${logoBlackUrl}" alt="META" />
+          <img class="sidebar__logo sidebar__logo--dark" src="${logoUrl}" alt="META" />
+        </div>
         <button class="sidebar__close burger-btn burger-btn--inside" type="button" aria-label="Close menu" aria-expanded="true">
           <span></span>
           <span></span>
@@ -19,38 +22,46 @@ export const renderApp = () => `
       <div class="sidebar__section">
         <p class="sidebar__title" data-i18n="sidebarTitle1"></p>
         <nav class="sidebar__nav">
-          <a href="#" data-i18n="sidebarCat1"></a>
-          <a href="#" data-i18n="sidebarCat2"></a>
-          <a href="#" data-i18n="sidebarCat3"></a>
-          <a href="#" data-i18n="sidebarCat4"></a>
-          <a href="#" data-i18n="sidebarCat5"></a>
-          <a href="#" data-i18n="sidebarCat6"></a>
-          <a href="#" data-i18n="sidebarCat7"></a>
-          <a href="#" data-i18n="sidebarCat8"></a>
-          <a href="#" data-i18n="sidebarCat9"></a>
-          <a href="#" data-i18n="sidebarCat10"></a>
+          <a href="#" data-group="sidebar-cats" data-i18n="sidebarCat1"></a>
+          <a href="#" data-group="sidebar-cats" data-i18n="sidebarCat2"></a>
+          <a href="#" class="is-active" data-group="sidebar-cats" data-i18n="sidebarCat3"></a>
+          <a href="#" data-group="sidebar-cats" data-i18n="sidebarCat4"></a>
+          <a href="#" data-group="sidebar-cats" data-i18n="sidebarCat5"></a>
+          <a href="#" data-group="sidebar-cats" data-i18n="sidebarCat6"></a>
+          <a href="#" data-group="sidebar-cats" data-i18n="sidebarCat7"></a>
+          <a href="#" data-group="sidebar-cats" data-i18n="sidebarCat8"></a>
+          <a href="#" data-group="sidebar-cats" data-i18n="sidebarCat9"></a>
+          <a href="#" data-group="sidebar-cats" data-i18n="sidebarCat10"></a>
         </nav>
       </div>
 
       <div class="sidebar__section">
         <p class="sidebar__title" data-i18n="sidebarTitle2"></p>
         <nav class="sidebar__nav sidebar__nav--projects">
-          <a href="#" data-i18n="sidebarProject1"></a>
-          <a href="#" data-i18n="sidebarProject2"></a>
-          <a href="#" data-i18n="sidebarProject3"></a>
-          <a href="#" data-i18n="sidebarProject4"></a>
-          <a href="#" data-i18n="sidebarProject5"></a>
+          <a href="#" data-group="sidebar-projects" data-i18n="sidebarProject1"></a>
+          <a href="#" data-group="sidebar-projects" data-i18n="sidebarProject2"></a>
+          <a href="#" data-group="sidebar-projects" data-i18n="sidebarProject3"></a>
+          <a href="#" data-group="sidebar-projects" data-i18n="sidebarProject4"></a>
+          <a href="#" data-group="sidebar-projects" data-i18n="sidebarProject5"></a>
         </nav>
       </div>
 
       <div class="sidebar__footer">
-        <label class="theme-switch">
+        <label class="sidebar__tool theme-switch">
           <span data-i18n="sidebarTheme"></span>
           <span class="theme-switch__control">
             <input class="js-theme-switch" type="checkbox" aria-label="Switch topic" />
             <span class="theme-switch__track"></span>
           </span>
         </label>
+
+        <div class="sidebar__tool sidebar__tool--language">
+          <span data-i18n="sidebarText"></span>
+          <div class="sidebar-lang" aria-label="Language switch">
+            <button class="sidebar-lang__btn is-active" type="button" data-lang="ua">UA</button>
+            <button class="sidebar-lang__btn" type="button" data-lang="ru">RU</button>
+          </div>
+        </div>
       </div>
     </aside>
 
@@ -87,16 +98,22 @@ export const renderApp = () => `
             </div>
 
             <button class="icon-btn" type="button" aria-label="Search">
-              <svg><use href="${spriteUrl}#icon-search"></use></svg>
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path fill="currentColor" d="M31.781 30.1l-8.063-8.063c-0.144-0.144-0.331-0.219-0.531-0.219h-0.644c2.144-2.319 3.456-5.412 3.456-8.819 0-7.181-5.819-13-13-13s-13 5.819-13 13c0 7.181 5.819 13 13 13 3.406 0 6.5-1.312 8.819-3.45v0.637c0 0.2 0.081 0.388 0.219 0.531l8.063 8.063c0.294 0.294 0.769 0.294 1.063 0l0.619-0.619c0.294-0.294 0.294-0.769 0-1.063zM13 24c-6.081 0-11-4.919-11-11s4.919-11 11-11c6.081 0 11 4.919 11 11s-4.919 11-11 11z" />
+              </svg>
             </button>
 
             <button class="icon-btn icon-btn--notice" type="button" aria-label="Notifications">
-              <svg><use href="${spriteUrl}#icon-notification"></use></svg>
+              <svg viewBox="0 0 27 32" aria-hidden="true">
+                <path fill="currentColor" d="M0 27.152h25.785v-2.002h-3.397v-12.755c0-2.276-0.701-4.296-2.103-6.058-1.394-1.753-3.193-2.841-5.397-3.262v-1.162c0-0.565-0.191-1.027-0.575-1.382-0.383-0.354-0.857-0.531-1.421-0.531s-1.038 0.176-1.421 0.531c-0.384 0.355-0.575 0.817-0.575 1.382v1.162c-2.203 0.422-3.996 1.51-5.376 3.263-1.388 1.763-2.082 3.783-2.082 6.058v12.755h-3.439v2.002zM9.861 28.921h6.062v0.048c0 0.841-0.295 1.558-0.884 2.147s-1.306 0.884-2.147 0.884c-0.814 0-1.523-0.295-2.126-0.884s-0.905-1.306-0.905-2.147v-0.048zM20.386 25.151h-14.986v-12.755c0-2.087 0.727-3.863 2.182-5.332s3.238-2.203 5.352-2.203c2.087 0 3.849 0.734 5.29 2.202s2.162 3.245 2.162 5.332v12.755z" />
+              </svg>
             </button>
 
             <div class="user-box">
               <button class="icon-btn user-btn" type="button" aria-label="Profile" aria-expanded="false">
-                <svg><use href="${spriteUrl}#icon-profile"></use></svg>
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                  <path fill="currentColor" d="M16 0c-8.839 0-16 7.161-16 16s7.161 16 16 16c8.839 0 16-7.161 16-16s-7.161-16-16-16zM24.258 27.2c-2.316 1.71-5.168 2.736-8.258 2.736s-5.942-1.026-8.258-2.736v-0.877c0-2.277 1.852-4.129 4.129-4.129 0.716 0 1.774 0.735 4.129 0.735 2.361 0 3.406-0.735 4.129-0.735 2.277 0 4.129 1.852 4.129 4.129v0.877zM26.232 25.426c-0.439-2.993-2.987-5.297-6.103-5.297-1.323 0-1.961 0.736-4.129 0.736s-2.8-0.736-4.129-0.736c-3.116 0-5.665 2.303-6.103 5.297-2.29-2.484-3.703-5.787-3.703-9.426 0-7.684 6.252-13.935 13.935-13.935s13.936 6.252 13.936 13.935c0 3.639-1.413 6.942-3.703 9.426zM16 7.226c-3.136 0-5.677 2.542-5.677 5.677s2.542 5.677 5.677 5.677c3.136 0 5.677-2.542 5.677-5.677s-2.542-5.677-5.677-5.677zM16 16.516c-1.994 0-3.613-1.619-3.613-3.613s1.619-3.613 3.613-3.613c1.994 0 3.613 1.619 3.613 3.613s-1.619 3.613-3.613 3.613z" />
+                </svg>
               </button>
 
               <div class="user-menu" aria-hidden="true">
@@ -106,14 +123,17 @@ export const renderApp = () => `
                 <a href="#">
                   <span data-i18n="menuComments"></span>
                 </a>
-                <a href="#">
+                <a href="#" class="user-menu__exit">
                   <span data-i18n="menuExit"></span>
+                  <svg aria-hidden="true"><use href="${spriteUrl}#icon-exit"></use></svg>
                 </a>
               </div>
             </div>
 
             <button class="icon-btn" type="button" aria-label="Messages">
-              <svg><use href="${spriteUrl}#icon-message"></use></svg>
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path fill="currentColor" d="M29 4h-26c-1.656 0-3 1.344-3 3v18c0 1.656 1.344 3 3 3h26c1.656 0 3-1.344 3-3v-18c0-1.656-1.344-3-3-3zM3 6h26c0.55 0 1 0.45 1 1v2.588c-1.369 1.156-3.325 2.75-9.412 7.581-1.056 0.837-3.138 2.856-4.588 2.831-1.45 0.025-3.537-1.994-4.588-2.831-6.088-4.831-8.044-6.425-9.412-7.581v-2.588c0-0.55 0.45-1 1-1zM29 26h-26c-0.55 0-1-0.45-1-1v-12.813c1.425 1.169 3.675 2.975 8.169 6.544 1.281 1.025 3.544 3.281 5.831 3.269 2.275 0.019 4.519-2.219 5.831-3.269 4.494-3.569 6.744-5.375 8.169-6.544v12.813c0 0.55-0.45 1-1 1z" />
+              </svg>
             </button>
           </div>
         </div>
@@ -132,9 +152,11 @@ export const renderApp = () => `
             <a href="#" class="section-nav__link" data-group="section-nav" data-i18n="section8"></a>
             <a href="#" class="section-nav__link" data-group="section-nav" data-i18n="section9"></a>
             <a href="#" class="section-nav__link" data-group="section-nav" data-i18n="section10"></a>
-            <button class="section-nav__more" type="button">
+            <button class="section-nav__more" type="button" aria-expanded="false">
               <span data-i18n="section11"></span>
-              <svg><use href="${spriteUrl}#icon-more"></use></svg>
+              <svg viewBox="0 0 55 32" aria-hidden="true">
+                <path fill="currentColor" d="M53.795 2.856l-2.424-2.425c-0.576-0.576-1.506-0.576-2.082 0l-22.175 22.127-22.176-22.127c-0.575-0.576-1.506-0.576-2.082 0l-2.425 2.425c-0.576 0.575-0.576 1.506 0 2.082l25.641 25.641c0.576 0.576 1.506 0.576 2.082 0l25.641-25.641c0.576-0.575 0.576-1.506 0-2.082z" />
+              </svg>
             </button>
           </nav>
         </div>
@@ -197,6 +219,8 @@ export const renderApp = () => `
               </li>
             </ul>
           </aside>
+
+          <h2 class="news-stream__title news-stream__title--mobile" data-i18n="mainTitle"></h2>
 
           <article class="hero-card news-card">
             <picture>

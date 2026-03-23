@@ -1,15 +1,16 @@
 .user-menu {
   position: absolute;
-  top: calc(100% + 12px);
-  right: 0;
-  width: 220px;
-  padding: 10px;
+  top: calc(100% + 4px);
+  right: -6px;
+  z-index: 40;
+  width: 242px;
+  padding: 0;
   display: grid;
-  gap: 4px;
+  gap: 0;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 18px;
-  box-shadow: var(--shadow-soft);
+  border-radius: 8px;
+  box-shadow: 0 20px 42px rgba(20, 24, 32, 0.18);
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
@@ -28,15 +29,39 @@
 .user-menu a {
   display: flex;
   align-items: center;
-  padding: 12px 14px;
-  border-radius: 12px;
+  justify-content: space-between;
+  min-height: 60px;
+  padding: 12px 32px;
   color: var(--text-color);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.2;
   transition: background-color $transition-speed;
 }
 
 .user-menu a:hover {
   background: var(--bg-muted);
+}
+
+.user-menu__exit {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.user-menu__exit svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1023px) {
+  .user-menu {
+    right: -12px;
+    width: min(200px, calc(100vw - 24px));
+  }
+
+  .user-menu a {
+    min-height: 76px;
+    padding: 20px 24px;
+    font-size: 0.88rem;
+  }
 }

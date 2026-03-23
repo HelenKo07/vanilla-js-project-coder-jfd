@@ -15,9 +15,10 @@
   margin-top: 32px;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   .news-layout {
     grid-template-columns: 280px minmax(0, 1fr);
+    gap: 28px;
   }
 
   .side-feed {
@@ -28,6 +29,7 @@
   }
 }
 
+@media (max-width: 1023px) {
   .page-main {
     padding: 16px 0 40px;
   }
@@ -57,4 +59,4 @@
     justify-content: center;
     margin-top: 28px;
   }
-
+}

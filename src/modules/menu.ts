@@ -8,6 +8,7 @@ export const initUserMenu = () => {
         userBtn.setAttribute('aria-expanded', String(isOpen));
         userMenu.setAttribute('aria-hidden', String(!isOpen));
         userMenu.classList.toggle('is-active', isOpen);
+        userBtn.classList.toggle('is-active', isOpen);
     };
 
     userBtn.addEventListener('click', (e) => {
