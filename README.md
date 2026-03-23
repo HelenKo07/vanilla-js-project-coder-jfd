@@ -52,6 +52,20 @@ npm run preview
 - Interactive states of interface elements
 - News cards and additional content blocks
 
+## Additional work completed
+
+- Refactored the project to a `mobile-first` approach
+- Implemented the sidebar menu
+- Added a close icon for the sidebar on mobile
+- Added closing the sidebar by clicking outside the panel
+- Added closing the profile menu by clicking outside the panel
+- Implemented theme switching
+- Implemented language switching
+- Added pagination / progressive loading for extra news
+- Added horizontal scrolling for additional news cards
+- Added `hover` and `active` states for interactive UI elements
+- Added arrow rotation for the `More` button open/close state
+
 ## Note
 
 The project uses `Sass @import`, so warnings about deprecated syntax may appear during build. This does not affect the current operation of the application.

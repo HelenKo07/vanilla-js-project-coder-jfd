@@ -23,8 +23,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
-    min-height: 49px;
+    gap: 12px;
+    min-height: 56px;
   }
 
   &__brand,
@@ -35,22 +35,22 @@
 
   &__brand {
     flex: 1 1 auto;
-    gap: 28px;
+    gap: 12px;
     min-width: 0;
   }
 
   &__actions {
-    gap: 16px;
+    gap: 4px;
     flex-shrink: 0;
   }
 
   &__logo {
-    width: 94px;
+    width: 100px;
     flex-shrink: 0;
   }
 
   &__top-nav {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 20px;
     flex: 1 1 auto;
@@ -69,7 +69,7 @@
   position: relative;
   padding: 8px 0;
   color: rgba(255, 255, 255, 0.72);
-  font-size: 0.75rem;
+  font-size: $fs-xs;
   font-weight: 500;
   letter-spacing: 0.02em;
   white-space: nowrap;
@@ -87,12 +87,12 @@
 .lang-switch {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   margin-right: 10px;
 
   &__btn {
     color: rgba(255, 255, 255, 0.56);
-    font-size: 0.75rem;
+    font-size: $fs-xs;
     font-weight: 500;
     transition: color $transition-speed;
   }
@@ -104,8 +104,8 @@
 
 .icon-btn {
   position: relative;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -126,7 +126,6 @@
     stroke $transition-speed;
 }
 
-.icon-btn:hover,
 .icon-btn.is-active {
   color: $color-blue;
 }
@@ -143,15 +142,15 @@
   border-radius: 50%;
   background: #ff8d1f;
   color: #111;
-  font-size: 0.68rem;
+  font-size: $fs-2xs;
   font-weight: 700;
 }
 
 .section-nav {
   display: flex;
   align-items: center;
-  gap: 38px;
-  min-height: 64px;
+  gap: 28px;
+  min-height: 54px;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -164,9 +163,9 @@
 .section-nav__more {
   position: relative;
   flex: 0 0 auto;
-  padding: 30px 0 22px;
+  padding: 18px 0 14px;
   color: rgba(255, 255, 255, 0.96);
-  font-size: 0.9rem;
+  font-size: $fs-xs;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -188,11 +187,10 @@
 }
 
 .section-nav__more {
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
-  min-width: 78px;
-  padding-right: 23px;
+  min-width: 56px;
 }
 
 .section-nav__more svg {
@@ -221,9 +219,17 @@
   z-index: 5;
 }
 
+.site-header__actions .icon-btn:last-child {
+  display: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .nav-link:hover {
     color: #fff;
+  }
+
+  .icon-btn:hover {
+    color: $color-blue;
   }
 
   .section-nav__link:hover::after {
@@ -231,63 +237,64 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (min-width: $bp-md) {
+  .section-nav__more {
+    display: inline-flex;
+  }
+
+  .site-header__actions .icon-btn:last-child {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .site-header__top-row {
+    gap: 24px;
+    min-height: 49px;
+  }
+
+  .site-header__brand {
+    gap: 28px;
+  }
+
+  .site-header__actions {
+    gap: 16px;
+  }
+
+  .site-header__logo {
+    width: 94px;
+  }
+
   .site-header__top-nav {
-    display: none;
+    display: flex;
+  }
+
+  .lang-switch {
+    gap: 8px;
+  }
+
+  .lang-switch__btn {
+    font-size: $fs-xs;
+  }
+
+  .icon-btn {
+    width: 36px;
+    height: 36px;
   }
 
   .section-nav {
-    gap: 28px;
-    min-height: 54px;
+    gap: 38px;
+    min-height: 64px;
   }
 
   .section-nav__link,
   .section-nav__more {
-    padding: 18px 0 14px;
-    font-size: 0.78rem;
+    padding: 30px 0 22px;
+    font-size: $fs-sm;
   }
 
   .section-nav__more {
-    min-width: 56px;
-  }
-}
-
-@media (max-width: 1023px) {
-  .site-header__top-row {
-    gap: 12px;
-  }
-
-  .site-header__brand {
-    gap: 12px;
-  }
-
-  .site-header__actions {
-    gap: 4px;
-  }
-
-  .site-header__logo {
-    width: 100px;
-  }
-
-  .lang-switch {
-    gap: 6px;
-  }
-
-  .lang-switch__btn {
-    font-size: 0.78rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .site-header__top-row {
-    min-height: 56px;
-  }
-
-  .site-header__actions .icon-btn:last-child {
-    display: none;
-  }
-
-  .section-nav__more {
-    display: none;
+    min-width: 78px;
+    padding-right: 23px;
   }
 }

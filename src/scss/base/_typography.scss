@@ -22,12 +22,12 @@ body.dark-theme {
 }
 
 .container {
-  width: min(100% - 116px, $container-width);
+  width: min(100% - 24px, $container-width);
   margin: 0 auto;
 }
 
-@media (max-width: 1023px) {
+@media (min-width: $bp-lg) {
   .container {
-    width: min(100% - 24px, $container-width);
+    width: min(100% - 116px, $container-width);
   }
 }
